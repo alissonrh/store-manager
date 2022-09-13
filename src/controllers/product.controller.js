@@ -9,7 +9,6 @@ const getAllProducts = async (_req, res) => {
 const getProductId = async (req, res) => {
   const { productId } = req.params;
   const { type, message } = await productService.isProductsExist(productId);
-  console.log(productId, type, message);
   if (type) return res.status(errorMap.mapError(type)).json({ message });
 
   res.status(200).json(message);

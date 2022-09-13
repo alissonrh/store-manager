@@ -13,6 +13,14 @@ const productsMock = [
   }
 ]
 
+const productError = [
+  {
+    type: 'PRODUCT_NOT_FOUND',
+    message: 'Product not found'
+  }
+]
+
 module.exports = {
-  productsMock
+  productsMock,
+  productError,
 }
