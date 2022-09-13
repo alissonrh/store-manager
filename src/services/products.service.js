@@ -14,7 +14,16 @@ const isProductsExist = async (productId) => {
   return { type: null, message: product };
 };
 
+const createNewProduct = async (name) => {
+  const newProduc = await productsModels.insert({ name });
+  console.log('newProduc', newProduc);
+
+  const product = await productsModels.findById(newProduc);
+  return { type: null, message: product };
+};
+
 module.exports = {
   isProductsExist,
   getAllProducts,
+  createNewProduct,
 };

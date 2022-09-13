@@ -26,18 +26,18 @@ describe('Testa o controller de products', function () {
     expect(res.json).to.have.been.calledWith(productsMock);
   })
   it('retorna status 200 e objeto com resultado', async function () {
-    const res = {};
+    const res = productsMock[0];
     const req = { params: { productId: 1 }, body: {} };
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns();
-    sinon.stub(productService, 'isProductsExist')
-      .resolves({ type: null, message: productsMock });
+      sinon.stub(productService, 'isProductsExist')
+        .resolves({ type: null, message: productsMock[0] });
 
     await productsController.getProductId(req, res);
 
     expect(res.status).to.have.been.calledWith(200);
-    expect(res.json).to.have.been.calledWith(productsMock);
+    expect(res.json).to.have.been.calledWith(productsMock[0]);
   });
 
   it('retorna status 404 e objeto com erro', async function () {
@@ -56,6 +56,7 @@ describe('Testa o controller de products', function () {
     expect(res.status).to.have.been.calledWith(404);
     expect(res.json).to.have.been.calledWith();
   });
+  
   afterEach(sinon.restore);
 });
 
