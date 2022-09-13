@@ -20,7 +20,13 @@ const productError = [
   }
 ]
 
+const newProduc = {
+  "id": 42,
+  "name": "Alisson"
+}
+
 module.exports = {
   productsMock,
   productError,
+  newProduc,
 }

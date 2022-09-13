@@ -20,7 +20,15 @@ const productError = [
   }
 ]
 
+const happyReqCreateNewProduct = {
+  body: {
+    "id": 42,
+    "name": "Alisson"
+  }
+}
+
 module.exports = {
   productsMock,
   productError,
+  happyReqCreateNewProduct,
 }

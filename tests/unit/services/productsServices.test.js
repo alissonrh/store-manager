@@ -42,8 +42,24 @@ describe('Testes da unidade de service de products', function () {
     expect(error.message).to.equal(productsMock.productsMock);
   })
 
-
   afterEach(function () {
     sinon.restore();
   });
+
+  describe('Testa o create New product', () => {
+    before(async () => {
+      sinon.stub(productsModels, 'insert').resolves(productsMock.newProduc);
+      sinon.stub(productsModels, 'findById').resolves(productsMock.newProduc)
+    });
+    
+    afterEach(function () {
+      sinon.restore();
+    });
+    
+    it('create pooduct', async () => {
+      const result = await productService.createNewProduct('Alisson')
+      
+      expect(result.message).to.equal(productsMock.newProduc);
+    })
+  })
 }) 
