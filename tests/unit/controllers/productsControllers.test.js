@@ -77,7 +77,34 @@ describe('Testa o controller de products', function () {
 
       expect(res.json).to.have.been.calledWith({ id: 42, name: "Alisson" });
     })
+
+    it('Criando um novo produto com tamanho do nome errado e chamando o status 422', async () => {
+      const res = {};
+      const req = {
+        body: {
+          name: 'al',
+        },
+      };
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+
+      sinon.stub(productService, 'createNewProduct').resolves({
+        type: 'INVALID_VALUE',
+        message: '"name" length must be at least 5 characters long'
+      })
+
+      await productsController.createProducts(req, res);
+
+      expect(res.status).to.have.been.calledWith(422);
+      expect(res.json).to.have.been.calledWith(
+        {
+          message: '"name" length must be at least 5 characters long',
+        }
+      )
+    })
   })
+
+
 
 
 });

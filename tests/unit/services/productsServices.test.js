@@ -42,6 +42,13 @@ describe('Testes da unidade de service de products', function () {
     expect(error.message).to.equal(productsMock.productsMock);
   })
 
+  it('retorna um erro ao receber um nome inválido', async () => {
+    const response = await productService.createNewProduct('as');
+
+    expect(response.type).to.equal('INVALID_VALUE');
+    expect(response.message).to.equal('"name" length must be at least 5 characters long');
+  })
+
   afterEach(function () {
     sinon.restore();
   });
