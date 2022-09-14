@@ -17,7 +17,6 @@ const isProductsExist = async (productId) => {
 
 const createNewProduct = async (name) => {
   const error = validateNewProduct(name);
-  console.log('errrrrr', error);
   if (error.type) return error;
   const newProduc = await productsModels.insert({ name });
   const product = await productsModels.findById(newProduc);
