@@ -8,12 +8,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-09-09T23:13:58.641Z",
-    "modified": "2022-09-13T22:51:57.670Z",
+    "modified": "2022-09-14T04:58:50.599Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"PX\"\n}",
+      "raw": "{\n  \"name\": \"aln\"\n}",
       "form": []
     },
     "tests": []
@@ -55,7 +55,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-09T23:15:43.409Z",
-    "modified": "2022-09-13T17:51:37.254Z",
+    "modified": "2022-09-14T04:57:01.549Z",
     "headers": [],
     "params": [],
     "tests": []
