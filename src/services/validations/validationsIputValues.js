@@ -1,5 +1,6 @@
 const {
   addNewProductSchema,
+  addNewSold,
 } = require('./schemas');
 
 const validateNewProduct = (name) => {
@@ -10,6 +11,21 @@ const validateNewProduct = (name) => {
   return { type: null, message: '' };
 };
 
+const validateCreateSaleSchema = (salesProducts) => {
+  const { error } = addNewSold.validate(salesProducts);
+
+  if (error) {
+    if (error.message.includes('must be greater than or equal to 1')) {
+      return { type: 'INVALID_VALUE', message: error.message.replace('[0].', '') };
+    }
+
+    return { type: 'BAD_REQUEST', message: error.message.replace('[0].', '') };
+  }
+
+  return { type: null, message: '' };
+};
+
 module.exports = {
   validateNewProduct,
+  validateCreateSaleSchema,
 };
