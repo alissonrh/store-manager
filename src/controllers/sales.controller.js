@@ -1,7 +1,7 @@
 const { salesService } = require('../services');
 const errorMap = require('../utils/errorMap');
 
-const createSale = async (req, res) => {
+const createSaleController = async (req, res) => {
   const salesProducts = req.body;
   
   const { type, message } = await salesService.createSale(
@@ -12,5 +12,5 @@ const createSale = async (req, res) => {
 };
 
 module.exports = {
-  createSale,
+  createSaleController,
 };

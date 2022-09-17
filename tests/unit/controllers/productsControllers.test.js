@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai')
 
-const productsController = require('../../../src/controllers/product.controller')
+const { productsController } = require('../../../src/controllers/')
 const { productService } = require('../../../src/services');
 const { productsMock, happyReqCreateNewProduct } = require('./mock/products.controllers.mock')
 
@@ -70,7 +70,8 @@ describe('Testa o controller de products', function () {
       res.status = sinon.stub().returns(res);
       res.json = sinon.stub().returns();
 
-      sinon.stub(productService, 'createNewProduct').resolves({ type: null, message: { id: 42, name: "Alisson" } } )
+      sinon.stub(productService, 'createNewProduct').resolves({ type: null, message: { id: 42, name: "Alisson" } })
+      
       await productsController.createProducts(req, res)
 
       expect(res.status).to.have.been.calledWith(201);

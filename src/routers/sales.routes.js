@@ -5,6 +5,6 @@ const validateQuantity = require('../middlewares/validateQuantity');
  */
 const router = express.Router();
 
-router.post('/', salesControllers.createSale);
+router.post('/', salesControllers.createSaleController);
 
 module.exports = router;
