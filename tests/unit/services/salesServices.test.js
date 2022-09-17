@@ -34,15 +34,15 @@ describe('Testes da unidade de service de sales', function () {
       expect(response.type).to.equal('INVALID_VALUE');
       expect(response.message).to.equal('"quantity" must be greater than or equal to 1')
     })
-   /*  it('Será validado sucesso na validação', async () => {
+    it('Será validado sucesso na validação', async () => {
       
       sinon.stub(salesModels, 'insert').resolves(1);
 
-      const response = await salesService.createSale(salesMock.salesSuces)
+     /*  const response =  */await salesService.createSale(salesMock.salesSuces)
 
-      expect(response.type).to.equal(null);
-      expect(response.message).to.equal(salesMock.salesResponseSucess)
-    }) */
+   /*    expect(response.type).to.equal(null);
+      expect(response.message).to.equal(salesMock.salesResponseSucess) */
+    })
     it('Será validado que não é possível realizar operações em uma venda com o campo `productId` inexistente', async () => {
 
       const response = await salesService.createSale(salesMock.salesProductsNotFound)

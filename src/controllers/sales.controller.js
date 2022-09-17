@@ -11,6 +11,21 @@ const createSaleController = async (req, res) => {
   return res.status(201).json(message);
 };
 
+const getAll = async (_req, res) => {
+  const { message } = await salesService.getAllSales();
+  res.status(200).json(message);
+};
+
+const getSaleById = async (req, res) => {
+  const { salesId } = req.params;
+  const { type, message } = await salesService.isSaleExist(salesId);
+  if (type) return res.status(errorMap.mapError(type)).json({ message });
+
+  res.status(200).json(message);
+};
+
 module.exports = {
   createSaleController,
+  getAll,
+  getSaleById,
 };
