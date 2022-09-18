@@ -148,5 +148,62 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "b3dd5c8f-5a9c-4dc6-ab50-a74848e3f8fc",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-09-18T21:56:34.234Z",
+    "modified": "2022-09-18T22:11:16.094Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Trajanos\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "aed30f99-f967-4573-b724-8f4cb8b29be7",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/2",
+    "url": "http://localhost:3000/products/2",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-09-18T22:10:12.881Z",
+    "modified": "2022-09-18T22:15:28.683Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Trajanos\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e1ee539a-bb4a-43f2-89dc-c56a0ae4d81b",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/5",
+    "url": "http://localhost:3000/products/5",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-09-18T22:10:46.622Z",
+    "modified": "2022-09-18T22:21:39.722Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Trsdfdfdfdfdfdfdf\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
