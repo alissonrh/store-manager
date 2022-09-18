@@ -1,9 +1,5 @@
-/* const chai = require('chai'); */
 const sinon = require('sinon');
-/* const sinonChai = require('sinon-chai') */
-
 const { expect } = require('chai');
-/* chai.use(sinonChai); */
 
 const connection = require('../../../src/models/connection');
 const { salesProductsModels } = require('../../../src/models');
@@ -30,6 +26,18 @@ describe('salesProductsModels', function () {
       sinon.stub(connection, 'execute').resolves([{ insertId: 45 }]);
       const response = await salesProductsModels.insert(payload);
       expect(response).to.equal(45)
+    })
+  })
+  describe('chama as vendas por id', () => {
+
+    after(async function () {
+      sinon.restore();
+    });
+
+    it('encontra a sale por Id', async () => {
+      sinon.stub(connection, 'execute').resolves([{ saleId: 1, productId: 1, quantity: 5 }]);
+      const response = await salesProductsModels.findById(1);
+      expect(response).to.deep.equal({ saleId: 1, productId: 1, quantity: 5 })
     })
   })
 })

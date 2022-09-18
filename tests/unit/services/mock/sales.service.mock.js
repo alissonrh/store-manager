@@ -41,6 +41,27 @@ const salesProductsNotFound = [
   }
 ]
 
+const allSalesMock = [
+  {
+    "saleId": 1,
+    "productId": 1,
+    "quantity": 5,
+    "date": "2022-09-17T17:41:10.000Z"
+  },
+  {
+    "saleId": 2,
+    "productId": 3,
+    "quantity": 15,
+    "date": "2022-09-17T17:41:10.000Z"
+  },
+  {
+    "saleId": 3,
+    "productId": 1,
+    "quantity": 1,
+    "date": "2022-09-18T18:26:20.000Z"
+  }
+]
+
 
 
 module.exports = {
@@ -50,4 +71,5 @@ module.exports = {
   salesQuantityEmpety,
   salesProductsNotFound,
   salesResponseSucess,
+  allSalesMock,
 }

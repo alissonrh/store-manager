@@ -13,6 +13,7 @@ const createSaleController = async (req, res) => {
 
 const getAll = async (_req, res) => {
   const { message } = await salesService.getAllSales();
+  console.log(message);
   res.status(200).json(message);
 };
 

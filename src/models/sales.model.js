@@ -13,7 +13,7 @@ const getAll = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM sales_products INNER JOIN sales on sales_products.sale_id = sales.id',
   );
-
+  
   return camelize(result);
 };
 
