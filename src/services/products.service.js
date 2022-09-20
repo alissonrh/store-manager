@@ -41,7 +41,6 @@ const deleteProduct = async (productId) => {
   if (productsExist.type) return productsExist;
 
   await productsModels.deleteProductById(productId);
-  console.log('deu certo');
 
   return { type: null };
 };
