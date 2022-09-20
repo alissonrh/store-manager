@@ -36,9 +36,20 @@ const attProductById = async (productId, dataToUpdate) => {
   return { type: null, message: getUpdatedProduct };
 };
 
+const deleteProduct = async (productId) => {
+  const productsExist = await isProductsExist(productId);
+  if (productsExist.type) return productsExist;
+
+  await productsModels.deleteProductById(productId);
+  console.log('deu certo');
+
+  return { type: null };
+};
+
 module.exports = {
   isProductsExist,
   getAllProducts,
   createNewProduct,
   attProductById,
+  deleteProduct,
 };
