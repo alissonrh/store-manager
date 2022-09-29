@@ -41,10 +41,19 @@ const deleteProduct = async (req, res) => {
   res.status(204).json(message);
 };
 
+const getProductByQuery = async (req, res) => {
+  const { q } = req.query;
+
+  const result = await productService.getProductByQuery(q);
+
+  res.status(200).json(result);
+};
+
 module.exports = {
   getProductId,
   getAllProducts,
   createProducts,
   attProductId,
   deleteProduct,
+  getProductByQuery,
 };
