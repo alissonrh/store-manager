@@ -28,7 +28,13 @@ const findById = async (saleId) => {
   return camelize(result);
 };
 
+const updateById = async (saleId, salesProductsToAtt) => connection.execute(
+    'UPDATE sales_products SET quantity = ? WHERE sale_id = ? AND product_id = ?',
+    [salesProductsToAtt.quantity, saleId, salesProductsToAtt.productId],
+  );
+
 module.exports = {
   insert,
   findById,
+  updateById,
 };
